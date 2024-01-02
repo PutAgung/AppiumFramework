@@ -15,7 +15,8 @@ import java.io.IOException;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "step_definitions",
-        plugin = {"json:target/cucumber-reports/cucumber.json"}
+        plugin = {"json:target/cucumber-reports/cucumber.json"},
+        tags = "@smoke"
 )
 public class TestRunner {
 

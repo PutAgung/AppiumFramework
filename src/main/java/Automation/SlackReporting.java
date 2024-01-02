@@ -14,6 +14,8 @@ public class SlackReporting {
     public static void sendResultsToSlack(String message) throws IOException, SlackApiException {
         Slack slack = Slack.getInstance();
         ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+
+                //Can change into desired channel to where the report should send
                 .channel("#general")
                 .text(message)
                 .build();

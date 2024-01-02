@@ -15,14 +15,19 @@ import java.util.concurrent.TimeUnit;
 
         public static void setup() throws MalformedURLException {
             DesiredCapabilities caps = new DesiredCapabilities();
-            // Set your Appium capabilities here
+
 
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
             caps.setCapability(MobileCapabilityType.UDID, "your_device_udid");
-            caps.setCapability(MobileCapabilityType.APP, "path/to/your/app.apk");
 
-            URL url = new URL("http://0.0.0.0:4723/wd/hub");
+            //---------Environment Setup--------------//
+            caps.setCapability(MobileCapabilityType.APP, "path/to/your/app.apk");
+            //Example: Staging URL
+            // URL url = new URL("http://staging/");
+            //Example: Production URL
+            URL url = new URL("http://production/");
+
             driver = new AndroidDriver<>(url, caps);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }

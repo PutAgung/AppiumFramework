@@ -16,14 +16,6 @@ public class SampleSteps extends AppiumBase {
         System.out.println("Running Scenario: " + scenario.getName());
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        // Add any teardown steps needed after each scenario
-        if (scenario.isFailed()) {
-            // Take screenshot or perform other actions on failure
-            System.out.println("Scenario failed! Taking screenshot...");
-        }
-    }
 
     @Given("^the app is open$")
     public void theAppIsOpen() {
@@ -41,5 +33,14 @@ public class SampleSteps extends AppiumBase {
     public void iShouldBeLoggedInSuccessfully() {
         // Add your assertions or verifications for successful login
         System.out.println("Logged in successfully");
+    }
+
+    @After
+    public void tearDown(Scenario scenario) {
+        // Add any teardown steps needed after each scenario
+        if (scenario.isFailed()) {
+            // Take screenshot or perform other actions on failure
+            System.out.println("Scenario failed! Taking screenshot...");
+        }
     }
 }
