@@ -13,10 +13,12 @@ import java.io.IOException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = "src/test/java/feature",
         glue = "step_definitions",
-        plugin = {"json:target/cucumber-reports/cucumber.json"},
-        tags = "@smoke"
+        plugin = { "pretty",
+                "json:target/cucumber.json"},
+        monochrome = true
+        //tags = "@smoke"
 )
 public class TestRunner {
 
